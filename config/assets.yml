@@ -1,0 +1,17 @@
+package_assets: on
+compress_assets: on
+embed_assets: off
+javascripts:
+  common:
+    - public/javascripts/jquery.js
+    - public/javascripts/jquery_ujs.js
+    - public/javascripts/application.js
+    - public/javascripts/underscore.js
+    - public/javascripts/backbone.js
+    - public/javascripts/routes.js
+    - public/javascripts/notes/index.js
+    - public/javascripts/notes/note.js
+    - app/views/notes/*.jst
+stylesheets:
+  common:
+    - public/stylesheets/application.css
