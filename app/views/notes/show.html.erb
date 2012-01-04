@@ -1,0 +1,16 @@
+<% title "Note" %>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @note.desc %>
+</p>
+<p>
+  <strong>Source Url:</strong>
+  <%= @note.source_url %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_note_path(@note) %> |
+  <%= link_to "Destroy", @note, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", notes_path %>
+</p>

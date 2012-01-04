@@ -1,0 +1,10 @@
+<% _(notes).map(function(note){%>
+    <li class="note">
+      <a href="#">
+        <h2><%= note.get('desc') %></h2>
+        <div class="note_tag"> 
+    <p style="top: -24px;position: fixed;"><%= note.get('tag_list') %></p> 
+</div>
+      </a>
+    </li>
+ <% }); %>

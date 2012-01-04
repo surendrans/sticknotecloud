@@ -1,0 +1,16 @@
+<%= form_for @note do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :note %><br />
+    <%= f.text_area :desc, :size => "50x4"	 %>
+  </p>
+  <p>
+    <%= f.label :source_url %><br />
+    <%= f.text_field :source_url %>
+  </p>
+  <p>
+  <%= label_tag "tags" %><br />
+      <%= text_field_tag :tag_list %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
