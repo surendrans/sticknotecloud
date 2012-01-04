@@ -1,17 +1,16 @@
-<link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
+<link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"> 
 <table width="100%">
 <tr><td><h2>Note Cloud</h2></td>
 <td>
-<input autocomplete="off" name="desc" class="search" class="textbox" placeholder="search by note" tabindex="1" type="text" maxlength="140" size="58" value="" style="font-size:20px;width: 200px; max-width: 400px;height:30px; ">
+<input autocomplete="off" name="desc" id="desc_search" class="search" class="textbox" placeholder="search by note" tabindex="1" type="text" maxlength="140" size="58" value="" style="font-size:20px;width: 200px; max-width: 400px;height:30px; ">
 </td>
 <td>
-<input autocomplete="off" name="tag" class="search" class="textbox" placeholder="search by Tag" tabindex="1" type="text" maxlength="140" size="58" value="" style="font-size:20px;width: 200px; max-width: 400px;height:30px; ">
+<input autocomplete="off" name="tag" id="tag_search" class="search" class="textbox" placeholder="search by Tag" tabindex="1" type="text" maxlength="140" size="58" value="" style="font-size:20px;width: 200px; max-width: 400px;height:30px; ">
 </td>
 <td align="right"><%= link_to image_tag("new_note.png"), new_note_path, :title => "Add note" %>
 
 </td></tr>
 </table>
-
 <!--<table>
   <tr>
     <th>Desc</th>
@@ -31,18 +30,19 @@
 </table>
 -->
  <ul id="note_cloud">
- <% for note in @notes %>
+ <!--<%# for note in @notes %>
     <li class="note">
-      <a href="<%= note_path(note) %>">
-        <h2><%= truncate(note.desc, :length => 10) %></h2>
-        <p><%= truncate(note.desc, :length => 70) %></p>
+      <a href="<%#= note_path(note) %>">
+        <h2><%#= truncate(note.description, :length => 10) %></h2>
+        <p><%#= truncate(note.description, :length => 70) %></p>
         <h4 class="tags"><%#= note.tag_list[0, 3]%></h4>
         <div class="note_tag"> 
-    <p style="top: -24px;position: fixed;"><%= note.tag_list[0, 3]%></p> 
+    <p style="top: -24px;position: fixed;"><%#= note.tag_list[0, 3]%></p> 
 </div>
       </a>
     </li>
-    <% end %>
+    <%# end %>
+    -->
   </ul>
   
   <style type="text/css">
@@ -71,6 +71,9 @@ ul li a{
 ul li{
   margin:1em;
   float:left;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  
 }
 ul li h2{
   font-size:140%;
@@ -200,9 +203,10 @@ $('.hint').hide('slide');
 }
 
 
-
 $(document).ready(function(){
-	$(".search").keydown(function(event) {
+	$(".search").focus(search);
+	$(".search").keyup(search);
+	$(".search").keyup(function(event) {
 		$(this).css('width', '400px');
 	});
 	$(".search").change(function(){	
@@ -210,10 +214,19 @@ $(document).ready(function(){
 		$(this).css('width', '200px');
 	});
 	
-	$('.note').hover(function(){
+	$('ul').delegate('li.note', "hover", function(){
 		$(this).find('.note_tag').toggle();
 	});
 
+	
+	function search() {
+	if ($(this).attr('id') == "tag_search") {
+			app_router.searchbyTag();
+			} else {
+			app_router.searchbyTitle();
+			
+			}
+	}
 	
 });
 </script>

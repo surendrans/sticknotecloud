@@ -3,7 +3,7 @@ autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag'
   def index
     @notes = Note.all
     respond_to do |f|
-    f.json{    render :json => @notes }
+    f.json{ render :json => @notes }
     f.html
     end
    
@@ -45,4 +45,16 @@ autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag'
     @note.destroy
     redirect_to notes_url, :notice => "Successfully destroyed note."
   end
+  
+  def search_by_desc
+  		 @notes = Note.where("description like ? ", "%#{params[:q]}%")
+@notes = Note.all if params[:q] == ""
+  		 render :json => @notes
+  end
+   def search_by_tag
+  		 @notes = Note.tagged_with([params[:q]], :any => true)
+		 @notes = Note.all if params[:q] == ""
+  		 render :json => @notes
+  end
+  
 end

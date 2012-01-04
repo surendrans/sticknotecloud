@@ -1,7 +1,7 @@
 class CreateNotes < ActiveRecord::Migration
   def self.up
     create_table :notes do |t|
-      t.text :desc
+      t.text :description
       t.string :source_url
       t.timestamps
     end

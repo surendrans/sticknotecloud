@@ -2,7 +2,7 @@
 
 <p>
   <strong>Desc:</strong>
-  <%= @note.desc %>
+  <%= @note.description %>
 </p>
 <p>
   <strong>Source Url:</strong>
@@ -12,5 +12,5 @@
 <p>
   <%= link_to "Edit", edit_note_path(@note) %> |
   <%= link_to "Destroy", @note, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", notes_path %>
+  <%= link_to "View All", "/" %>
 </p>

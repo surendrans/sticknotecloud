@@ -1,7 +1,7 @@
 <% _(notes).map(function(note){%>
     <li class="note">
       <a href="#">
-        <h2><%= note.get('desc') %></h2>
+        <p><%= note.get('description').substring(0,60) %></p>
         <div class="note_tag"> 
     <p style="top: -24px;position: fixed;"><%= note.get('tag_list') %></p> 
 </div>
