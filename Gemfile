@@ -7,6 +7,7 @@ gem 'rails3-jquery-autocomplete'
 gem 'mysql'
 gem 'acts-as-taggable-on'
 gem 'jammit'
+gem 'pg'
 # Use unicorn as the web server
 # gem 'unicorn'
 
