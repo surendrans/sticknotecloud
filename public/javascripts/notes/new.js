@@ -1,6 +1,7 @@
 newNote = Backbone.View.extend({
     events: {
-        "submit form":          "save"
+        "submit form":          "save",
+        "a.cancel" : 	"close_form"
     },
     element : '#new-note',
     initialize: function(){
@@ -17,7 +18,12 @@ newNote = Backbone.View.extend({
         var url =this.$('[name=url]').val();
         var tag_list =this.$('[name=tags]').val();
         var note = new Note({'note' : {'description' : note, 'source_url' : url}, 'tags' : tag_list })
+    },
+    
+    close_form :  function() {
+    alert('close');
     }
+    
 
 });
 

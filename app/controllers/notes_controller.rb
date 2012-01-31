@@ -1,14 +1,14 @@
 class NotesController < ApplicationController
 autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag'
+  
   def index
-    @notes = Note.all
     @note = Note.new
-    respond_to do |f|
-    f.json{ render :json => @notes }
-    f.html
-    end
-   
   end
+
+def get_all_notes
+    @notes = Note.all :include => [:tags] 
+  		render :json => notes_with_tags 
+end
 
   def show
     @note = Note.find(params[:id])
@@ -49,13 +49,23 @@ autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag'
   
   def search_by_desc
   		 @notes = Note.where("description like ? ", "%#{params[:q]}%")
-@notes = Note.all if params[:q] == ""
+		 @notes = Note.all if params[:q] == ""
   		 render :json => @notes
   end
+  
+  
    def search_by_tag
   		 @notes = Note.tagged_with([params[:q]], :any => true)
 		 @notes = Note.all if params[:q] == ""
   		 render :json => @notes
   end
+  
+  private
+  
+  def notes_with_tags
+  		@notes.collect do  |note|
+	    {:description => note.description, :tags => note.tags.collect(&:name)}
+	    end
+    end
   
 end

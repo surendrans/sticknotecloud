@@ -5,6 +5,7 @@ Tt::Application.routes.draw do
 		 get :autocomplete_tag_name
 		 get :search_by_desc
 		  get :search_by_tag
+		   get :get_all_notes
 	  end
   end
   # The priority is based upon order of creation:

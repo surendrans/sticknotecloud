@@ -37,6 +37,9 @@ ul,li{
     font-family:"Reenie Beanie",arial,sans-serif;
     font-size:150%;
   }
+  ul li .note_tag p {
+     font-family:"Ropa Sans";
+     }
   ul li a{
     -webkit-transform: rotate(-6deg);
     -o-transform: rotate(-6deg);
@@ -104,6 +107,7 @@ ul,li{
     -ms-transition:     opacity 1s,     -ms-transform 0.5s 1s;
     -o-transition:      opacity 1s,      -o-transform 0.5s 1s;
     transition:         opacity 1s,         transform 0.5s 1s;
+     font-family:"Ropa Sans";
   }
 
   .hint {

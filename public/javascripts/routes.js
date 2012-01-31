@@ -7,10 +7,10 @@ var AppRouter = Backbone.Router.extend({
         "new"   : "new_note"
     },
     notes_index : function(){
-        $.getJSON('/notes', function(data) {
+        $.getJSON('/notes/get_all_notes', function(data) {
             if (data) {
                 var notes = _(data).map(function(v) {
-                    return new Note(v.note)
+                    return new Note(v)
                 });
                 new NoteIndex(notes);
             }

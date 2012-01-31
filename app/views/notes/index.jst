@@ -3,7 +3,13 @@
       <a href="#">
         <p><%= note.get('description').substring(0,60) %></p>
         <div class="note_tag"> 
-    <p style="top: -24px;position: fixed;"><%= note.get('tag_list') %></p> 
+    <p style="top: 5px;position: fixed;font-size:18px">
+    	
+    	<% note.get('tags').map(function(tag) { %>
+    
+    	<span><%= tag %> </span>
+ 		<% }); %>   
+    </p> 
 </div>
       </a>
     </li>
