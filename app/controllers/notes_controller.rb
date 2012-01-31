@@ -48,16 +48,16 @@ end
   end
   
   def search_by_desc
-  		 @notes = Note.where("description like ? ", "%#{params[:q]}%")
-		 @notes = Note.all if params[:q] == ""
-  		 render :json => @notes
+  		 @notes = Note.where("description like ? ", "%#{params[:q]}%").includes(:tags) 
+		 @notes = Note.all :include => [:tags]   if params[:q] == ""
+  		 render :json => notes_with_tags
   end
   
   
    def search_by_tag
-  		 @notes = Note.tagged_with([params[:q]], :any => true)
-		 @notes = Note.all if params[:q] == ""
-  		 render :json => @notes
+  		 @notes = Note.tagged_with([params[:q]], :any => true).includes(:tags)  
+		 @notes = Note.all :include => [:tags]  if params[:q] == ""
+  		 render :json => notes_with_tags
   end
   
   private

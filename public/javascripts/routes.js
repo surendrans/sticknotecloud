@@ -21,7 +21,7 @@ var AppRouter = Backbone.Router.extend({
         $.getJSON('/notes/search_by_desc?q=' + $('#desc_search').val(), function(data) {
             if (data) {
                 var notes = _(data).map(function(v) {
-                    return new Note(v.note)
+                    return new Note(v)
                 });
                 new NoteIndex(notes);
             }
@@ -32,7 +32,7 @@ var AppRouter = Backbone.Router.extend({
         $.getJSON('/notes/search_by_tag?q=' + $('#tag_search').val(), function(data) {
             if (data) {
                 var notes = _(data).map(function(v) {
-                    return new Note(v.note)
+                    return new Note(v)
                 });
                 new NoteIndex(notes);
             }
