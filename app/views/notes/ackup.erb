@@ -1,0 +1,61 @@
+  <!--<%# for note in @notes %>
+     <li class="note">
+       <a href="<%#= note_path(note) %>">
+         <h2><%#= truncate(note.description, :length => 10) %></h2>
+         <p><%#= truncate(note.description, :length => 70) %></p>
+         <h4 class="tags"><%#= note.tag_list[0, 3]%></h4>
+         <div class="note_tag">
+     <p style="top: -24px;position: fixed;"><%#= note.tag_list[0, 3]%></p>
+ </div>
+       </a>
+     </li>
+<%# end %>
+  -->
+  
+  
+  <form style="margin-top: 15px">
+  <p>
+<textarea name="note" class="span5" rows="4" style="font-size:16px" placeholder="NOTE" >
+</textarea>
+  </p>
+  <p>
+<input type="text" class="span5" name="url" style="height:30px;font-size:16px" placeholder="URL" />
+  </p>
+  <p>
+    <input type="text" class="span5" name="tags" placeholder="TAGS" style="height:30px;font-size:16px"/>
+  </p>
+
+  <p><button class="save_note btn large primary">Note it</button></p>
+</form>
+
+
+
+
+
+
+
+newNote = Backbone.View.extend({
+    events: {
+        "submit form":          "save"
+    },
+    element : '#new-note',
+    initialize: function(){
+        this.render();
+    },
+
+    render : function(){
+        $(this.element).html(JST.new_note());
+    // $('#note_cloud').html(this.el);
+    },
+
+    save : function() {
+        var note =this.$('[name=note]').val();
+        var url =this.$('[name=url]').val();
+        var tag_list =this.$('[name=tags]').val();
+        alert(url);
+        var note = new Note({'note' : {'description' : note, 'source_url' : url}, 'tags' : tag_list })
+    }
+
+});
+
+

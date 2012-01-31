@@ -1,5 +1,10 @@
 Note = Backbone.Model.extend({
-			initialize : function(){
-			}	
+    defaults: {
+        description: "",
+        source_url: "",
+        tags: ""
+    },
+    initialize : function(){
+    }
 });
 

@@ -2,6 +2,7 @@ class NotesController < ApplicationController
 autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag'
   def index
     @notes = Note.all
+    @note = Note.new
     respond_to do |f|
     f.json{ render :json => @notes }
     f.html

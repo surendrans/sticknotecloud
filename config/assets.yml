@@ -8,10 +8,19 @@ javascripts:
     - public/javascripts/application.js
     - public/javascripts/underscore.js
     - public/javascripts/backbone.js
-    - public/javascripts/routes.js
+    - public/javascripts/notes/new.js
     - public/javascripts/notes/index.js
+    - public/javascripts/routes.js
     - public/javascripts/notes/note.js
     - app/views/notes/*.jst
+  note_cloud:
+    - public/javascripts/note_cloud.js
+  twitter_bootstrap:
+    - public/javascripts/bootstrap-buttons.js
 stylesheets:
   common:
     - public/stylesheets/application.css
+  note_cloud:
+    - public/stylesheets/custom.css
+  twitter_bootstrap:
+    - public/stylesheets/bootstrap.css
