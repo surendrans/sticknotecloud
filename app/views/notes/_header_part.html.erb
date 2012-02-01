@@ -1,0 +1,20 @@
+<table width="100%">
+  <tr><td><h2>Note Cloud</h2></td>
+    <td>
+      <input autocomplete="off" name="desc" id="search_by_note" class="search span6" class="textbox" placeholder="search by note" tabindex="1" type="text" style="font-size:20px;height:30px; ">
+    </td>
+    <td>
+      <input autocomplete="off" name="tag" id="search_by_tag" class="search span6" class="textbox" placeholder="search by Tag" tabindex="1" type="text" maxlength="140" size="58" value="" style="font-size:20px;height:30px; ">
+    </td>
+    <td align="right">
+<%#= link_to image_tag("new_note.png"), "#new", :id => "new_note", :title => "Add note" %>
+      <a href='notes/new' class="label">Create New</a>
+    </td>
+    <td>
+    <a href="#" class="label" id="show_tags">Show Tags</a>
+    </td>
+     <td>
+   <a href="#show_all" class="label" id="show_all">Show all</a>
+    </td>
+    </tr>
+</table>

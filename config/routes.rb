@@ -6,6 +6,7 @@ Tt::Application.routes.draw do
 		 get :search_by_desc
 		  get :search_by_tag
 		   get :get_all_notes
+		   get :search_tags 
 	  end
   end
   # The priority is based upon order of creation:

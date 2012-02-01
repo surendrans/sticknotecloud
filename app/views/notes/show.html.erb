@@ -1,16 +1,17 @@
-<% title "Note" %>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @note.description %>
-</p>
-<p>
-  <strong>Source Url:</strong>
-  <%= @note.source_url %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_note_path(@note) %> |
-  <%= link_to "Destroy", @note, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", "/" %>
-</p>
+<ul class="breadcrumb">
+  <li>
+    <a href="/">Home</a> <span class="divider">/</span>
+  </li>
+  <li class="active">
+   <%= @note.description.truncate(20) %>
+  </li>
+</ul>
+<pre >
+ <p> <strong>Desc : </strong><%= @note.description %></p>
+ <p> <strong>Source Url:</strong> <%= @note.source_url %></p>
+    <p> <strong>Tags :</strong>   <%= @note.tags.join(",") %>    </p>
+</pre>
+<div class="btn-group">
+<%= link_to   "Edit", edit_note_path(@note), :class => "btn" %> 
+<%= link_to "Destroy", @note, :confirm => 'Are you sure?', :method => :delete, :class => "btn"  %>
+        </div>

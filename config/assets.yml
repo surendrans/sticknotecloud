@@ -13,6 +13,7 @@ javascripts:
     - public/javascripts/routes.js
     - public/javascripts/notes/note.js
     - app/views/notes/*.jst
+    - public/javascripts/tags/*.js
   note_cloud:
     - public/javascripts/note_cloud.js
   twitter_bootstrap:
@@ -22,5 +23,6 @@ stylesheets:
     - public/stylesheets/application.css
   note_cloud:
     - public/stylesheets/custom.css
+    - public/stylesheets/tag_cloud.css
   twitter_bootstrap:
     - public/stylesheets/bootstrap.css

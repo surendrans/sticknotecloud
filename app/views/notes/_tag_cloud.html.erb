@@ -1,0 +1,8 @@
+<p>
+<input type="text" placeholder="Search Tags" class="search" id="search_tags" />
+</p>
+<div class="tag_cloud">
+<% @tags.each do |tag| %>
+  <%= link_to tag.name, "#", :class => 'tag' %>
+<% end %>
+</div>

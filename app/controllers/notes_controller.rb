@@ -3,6 +3,7 @@ autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag'
   
   def index
     @note = Note.new
+     @tags = Note.tag_counts_on(:tags).order("name asc")
   end
 
 def get_all_notes
@@ -60,11 +61,16 @@ end
   		 render :json => notes_with_tags
   end
   
+  
+  def search_tags 
+  		 @tags = Note.tag_counts_on(:tags).order("name asc").where("name like '#{params[:q]}%'")
+  		 render :json => @tags
+  end
   private
   
   def notes_with_tags
   		@notes.collect do  |note|
-	    {:description => note.description, :tags => note.tags.collect(&:name)}
+	    {:description => note.description, :id => note.id, :tags => note.tags.collect(&:name)}
 	    end
     end
   

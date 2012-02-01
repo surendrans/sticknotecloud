@@ -69,7 +69,12 @@ ul,li{
     top:-10px;
   }
   ul li a:hover,ul li a:focus{
-    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    box-shadow:10px 10px 7p.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}x rgba(0,0,0,.7);
     -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
     -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
     -webkit-transform: scale(1.25);
@@ -147,3 +152,18 @@ ul,li{
     -o-transform:      translateY(0px);
     transform:         translateY(0px);
   }
+  
+  
+  
+  div#floating_buttons a{
+  	left: 0px;
+  	position: fixed;
+  	top: 250px;
+  }
+  
+  .animate {
+  left:0px;
+}
+
+
+

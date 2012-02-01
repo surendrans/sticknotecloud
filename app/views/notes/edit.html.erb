@@ -1,8 +1,14 @@
-<% title "Edit Note" %>
+<ul class="breadcrumb">
+  <li>
+    <a href="/">Home</a> <span class="divider">/</span>
+  </li>
+  <li >
+<a href="/notes/<%= @note.id %>"><%= @note.description.truncate(20)%></a> <span class="divider">/</span>
+  </li>
+  <li class="active">
+Edit Note
+  </li>
+</ul>
 
 <%= render 'form' %>
 
-<p>
-  <%= link_to "Show", @note %> |
-  <%= link_to "View All", notes_path %>
-</p>

@@ -1,13 +1,13 @@
 <% _(notes).map(function(note){%>
     <li class="note">
-      <a href="#">
-        <p><%= note.get('description').substring(0,100) %></p>
+      <a href="/notes/<%= note.id %>">
+        <p><%= note.get('description').substring(0, 100) %></p>
         <div class="note_tag"> 
     <p style="top: 5px;position: fixed;font-size:18px">
     	
     	<% note.get('tags').map(function(tag) { %>
     
-    	<span style="z-index: 100;margin:2px;background-color:green"><%= tag %> </span>
+    	<span class="tag" style="padding:1px;background-color:green"><%= tag %> </span>
  		<% }); %>   
     </p> 
 </div>
