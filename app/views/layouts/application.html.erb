@@ -3,7 +3,7 @@
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= include_stylesheets :common, :twitter_bootstrap, :media => 'all' %>
-		<%= include_javascripts :common, :twitter_bootstrap %>
+	
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>

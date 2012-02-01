@@ -20,6 +20,7 @@ end
   end
 
   def create
+  p 
     @note = Note.new(params[:note])
     @note.tag_list = params["tag_list"]
     if @note.save
@@ -36,6 +37,8 @@ end
   def update
     @note = Note.find(params[:id])
     if @note.update_attributes(params[:note])
+    @note.tag_list = params[:tag_list]
+    @note.save
       redirect_to @note, :notice  => "Successfully updated note."
     else
       render :action => 'edit'

@@ -10,6 +10,7 @@
  <p> <strong>Desc : </strong><%= @note.description %></p>
  <p> <strong>Source Url:</strong> <%= @note.source_url %></p>
     <p> <strong>Tags :</strong>   <%= @note.tags.join(",") %>    </p>
+      <p> <strong>Created and Updated on :</strong> <%= @note.created_at.strftime("%d-%m-%Y") %>   &   <%= @note.updated_at.strftime("%d-%m-%Y") %>  </p>
 </pre>
 <div class="btn-group">
 <%= link_to   "Edit", edit_note_path(@note), :class => "btn" %> 
