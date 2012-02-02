@@ -1,11 +1,11 @@
-ul,li{
+ul#note_cloud,li.note{
     list-style:none;
   }
-  ul{
+  ul#note_cloud{
     overflow:hidden;
     padding:0.7em;
   }
-  ul li a{
+  ul#note_cloud li a{
     text-decoration:none;
     color:#000;
     background:#ffc;
@@ -20,32 +20,32 @@ ul,li{
     -o-transition:-o-transform .15s linear;
     -webkit-transition:-webkit-transform .15s linear;
   }
-  ul li{
+  ul#note_cloud li{
     margin:1em;
     float:left;
     text-overflow: ellipsis;
     white-space: wrap;
 
   }
-  ul li h2{
+  ul#note_cloud li h2{
     font-size:140%;
     font-weight:bold;
     padding-bottom:0px;
     margin-top:0px;
   }
-  ul li p{
+  ul#note_cloud li p{
     font-family:"Reenie Beanie",arial,sans-serif;
     font-size:150%;
   }
-  ul li .note_tag p {
+  ul#note_cloud li .note_tag p {
      font-family:"Ropa Sans";
      }
-  ul li a{
+  ul#note_cloud li a{
     -webkit-transform: rotate(-6deg);
     -o-transform: rotate(-6deg);
     -moz-transform:rotate(-6deg);
   }
-  ul li:nth-child(even) a{
+  ul#note_cloud li:nth-child(even) a{
     -o-transform:rotate(4deg);
     -webkit-transform:rotate(4deg);
     -moz-transform:rotate(4deg);
@@ -53,7 +53,7 @@ ul,li{
     top:5px;
     background:#cfc;
   }
-  ul li:nth-child(3n) a{
+  ul#note_cloud li:nth-child(3n) a{
     -o-transform:rotate(-3deg);
     -webkit-transform:rotate(-3deg);
     -moz-transform:rotate(-3deg);
@@ -61,14 +61,14 @@ ul,li{
     top:-5px;
     background:#ccf;
   }
-  ul li:nth-child(5n) a{
+  ul#note_cloud li:nth-child(5n) a{
     -o-transform:rotate(5deg);
     -webkit-transform:rotate(5deg);
     -moz-transform:rotate(5deg);
     position:relative;
     top:-10px;
   }
-  ul li a:hover,ul li a:focus{
+  ul#note_cloud li a:hover,ul li a:focus{
     box-shadow:10px 10px 7p.ellipsis {
     white-space: nowrap;
     overflow: hidden;

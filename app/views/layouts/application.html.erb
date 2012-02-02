@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Note Factory" %></title>
     <%= include_stylesheets :common, :twitter_bootstrap, :media => 'all' %>
 	
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
   <body style="background-color: white;background:url(/images/body_back.jpg)	">
+  
+  <div class="topbar"> 
+      <div class="fill"> 
+        <div class="container"> 
+            <ul class ="nav" style="float:right;"> 
+             
+              <% if user_signed_in? %>
+               <li>
+    		<a href="#" >Signed in as <%= current_user.email %>. Not you? </a>
+     </li>
+     <li>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    </li>
+  <% else %>
+  <li>
+    <%= link_to "Sign up", new_user_registration_path  if params[:controller] != "devise/registrations"%> 
+    </li>
+    <li>
+    <%= link_to "Sign in", new_user_session_path if params[:controller] != "devise/sessions"%>
+    </li>
+  <% end %>
+            </ul> 
+        </div> 
+      </div> 
+    </div> 
+  
+  
+  
+  
+  
+  
+  
+  <div id="user_nav">
+  
+</div>
+  
     <div id="container" style="background: #F0F0F0 url(/images/grey_bg.jpg);border-radius: 15px;border-color: white;">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>

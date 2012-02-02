@@ -1,0 +1,28 @@
+<div class="form_normal">
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+   <fieldset>
+  <%= devise_error_messages! %>
+
+   <div class="control-group">
+   <label class="control-label" for="input01">Email :  </label>
+    <div class="controls">
+  <%= f.email_field :email %></div></div>
+<br />
+<div class="control-group">
+   <label class="control-label" for="input01">Password :  </label>
+    <div class="controls">
+  <%= f.password_field :password %></div></div>
+<br />
+<div class="control-group">
+   <label class="control-label" for="input01">Confirmation :  </label>
+    <div class="controls">
+  <%= f.password_field :password_confirmation %></div></div>
+<br />
+<div class="control-group">
+ <label class="control-label" for="input01"> </label>
+<div class="controls"  style = "text-align:left">
+<%= f.submit "Sign up", :class=>"btn btn-primary" %></div></div>
+   </fieldset>
+<% end %>
+
+<%#= render :partial => "devise/shared/links" %>

@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag'
+	before_filter :authenticate_user!
   
   def index
     @note = Note.new

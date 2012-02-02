@@ -18,11 +18,14 @@ javascripts:
     - public/javascripts/note_cloud.js
   twitter_bootstrap:
     - public/javascripts/bootstrap-buttons.js
+    - public/javascripts/bootstrap.min.js
 stylesheets:
   common:
     - public/stylesheets/application.css
+    - public/stylesheets/form_style.css
   note_cloud:
     - public/stylesheets/custom.css
     - public/stylesheets/tag_cloud.css
   twitter_bootstrap:
     - public/stylesheets/bootstrap.css
+    

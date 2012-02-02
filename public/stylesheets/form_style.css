@@ -1,0 +1,11 @@
+.form_normal{
+
+background-color: whiteSmoke;
+display: block;
+-webkit-border-radius: 3px;
+border: 1px solid rgba(0, 0, 0, 0.15);
+
+}
+div .control-label {
+font-family: Monaco, Andale Mono, Courier New, monospace;
+}
