@@ -25,6 +25,7 @@ a {
   padding: 20px 40px;
   border: solid 1px black;
   margin-top: 43px;
+  min-height : 300px
 }
 
 #flash_notice, #flash_error, #flash_alert {
@@ -54,6 +55,8 @@ a {
   margin-bottom: 20px;
   background-color: #f0f0f0;
   font-size: 12px;
+  position: relative;
+left: 20px;
 }
 
 .error_messages h2 {
@@ -72,4 +75,8 @@ a {
 
 .error_messages ul {
   margin: 0;
+}
+.error_messages ul li{
+list-style : none;
+padding-left: 28px;
 }
