@@ -28,4 +28,5 @@ stylesheets:
     - public/stylesheets/tag_cloud.css
   twitter_bootstrap:
     - public/stylesheets/bootstrap.css
+    - public/stylesheets/custom_bootstrap.css
     
