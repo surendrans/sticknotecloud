@@ -8,14 +8,14 @@ javascripts:
     - public/javascripts/application.js
     - public/javascripts/underscore.js
     - public/javascripts/backbone.js
+  note_cloud:
+    - public/javascripts/note_cloud.js
     - public/javascripts/notes/new.js
     - public/javascripts/notes/index.js
     - public/javascripts/routes.js
     - public/javascripts/notes/note.js
     - app/views/notes/*.jst
     - public/javascripts/tags/*.js
-  note_cloud:
-    - public/javascripts/note_cloud.js
   twitter_bootstrap:
     - public/javascripts/bootstrap-buttons.js
     - public/javascripts/bootstrap.min.js
