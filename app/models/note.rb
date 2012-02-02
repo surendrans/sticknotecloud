@@ -4,4 +4,6 @@ class Note < ActiveRecord::Base
    validates :description, :presence => true
   
   
+#  Relation  
+   belongs_to :user
 end

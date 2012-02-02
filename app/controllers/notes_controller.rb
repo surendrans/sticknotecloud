@@ -7,7 +7,7 @@ class NotesController < ApplicationController
   end
 
 def get_all_notes
-    @notes = Note.all :include => [:tags] 
+    @notes = current_user.notes :include => [:tags] 
   		render :json => notes_with_tags 
 end
 
@@ -20,8 +20,7 @@ end
   end
 
   def create
-  p 
-    @note = Note.new(params[:note])
+    @note = current_user.notes.new(params[:note])
     @note.tag_list = params["tag_list"]
     if @note.save
       redirect_to @note, :notice => "Successfully created note."
@@ -52,21 +51,21 @@ end
   end
   
   def search_by_desc
-  		 @notes = Note.where("description like ? ", "%#{params[:q]}%").includes(:tags) 
-		 @notes = Note.all :include => [:tags]   if params[:q] == ""
+  		 @notes = current_user.notes.where("description like ? ", "%#{params[:q]}%").includes(:tags) 
+		 @notes = current_user.notes :include => [:tags]   if params[:q] == ""
   		 render :json => notes_with_tags
   end
   
   
    def search_by_tag
-  		 @notes = Note.tagged_with([params[:q]], :any => true).includes(:tags)  
-		 @notes = Note.all :include => [:tags]  if params[:q] == ""
+  		 @notes = current_user.notes.tagged_with([params[:q]], :any => true).includes(:tags)  
+		 @notes = current_user.notes.all :include => [:tags]  if params[:q] == ""
   		 render :json => notes_with_tags
   end
   
   
   def search_tags 
-  		 @tags = Note.tag_counts_on(:tags).order("name asc").where("name like '#{params[:q]}%'")
+  		 @tags = current_user.notes.tag_counts_on(:tags).order("name asc").where("name like '#{params[:q]}%'")
   		 render :json => @tags
   end
   private
