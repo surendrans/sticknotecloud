@@ -1,3 +1,4 @@
+<%= include_stylesheets :note_cloud, :media => 'all' %>
 <div class="new_edit_form">
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 <fieldset>
@@ -26,7 +27,7 @@
   </div>
 </fieldset>
 <% end %>
-
+<%= render :partial => "/notes/users_hint" %>
 </div>
 
 

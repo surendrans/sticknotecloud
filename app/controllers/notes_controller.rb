@@ -68,6 +68,11 @@ end
   		 @tags = current_user.notes.tag_counts_on(:tags).order("name asc").where("name like '#{params[:q]}%'")
   		 render :json => @tags
   end
+  
+  def list_users
+  	@users = User.all
+  end
+  
   private
   
   def notes_with_tags
